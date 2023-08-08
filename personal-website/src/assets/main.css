@@ -1,0 +1,15 @@
+:root {
+  --primary-light: #d1c8d1; 
+  --primary-dark: #bb9bbb; 
+  --gray-color: #8e8e8e; 
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  padding: 30px 15vw;
+  text-align: center;
+  width: 100%;
+}
