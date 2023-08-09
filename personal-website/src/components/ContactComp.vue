@@ -1,23 +1,23 @@
 <template>
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="container">
             <h3>تماس با من</h3>
             <div class="contact-container">
                 <div class="contact-item" v-for="item in contactItems">
                     <img :src="item.icon" alt="">
-                    <span>{{ item.info }}</span>
+                    <a :href="item.href" target="_blank" dir="ltr">{{ item.info }}</a>
                 </div>
             </div>
             <h6>راه ارتباطی سریع تر</h6>
             <form @submit.prevent="submit">
                 <div class="row">
-                    <input type="text" placeholder="نام">
-                    <input type="email" placeholder="ایمیل">
+                    <input type="text" id="name" placeholder="نام">
+                    <input type="email" id="email" placeholder="ایمیل">
                 </div>
-                <input type="text" placeholder="عنوان">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <input type="text" id="topic" placeholder="عنوان">
+                <textarea name="" id="message" cols="30" rows="10"></textarea>
                 <div class="row">
-                    <input type="submit" value="ارسال">
+                    <input type="submit" id="submit" value="ارسال">
                 </div>
             </form>
         </div>
@@ -29,16 +29,16 @@
         data() {
             return {
                 contactItems: [
-                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/apple-phone.png' ,info:'+989210734504'},
-                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/new-post.png' ,info:'n.khorrami8819@gmail.com'},
-                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/github.png' ,info:'https://github.com/najme-khorrami'},
-                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/linkedin.png' ,info:'linkedin'}
+                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/apple-phone.png' ,href:'tel:+989210734504' ,info:'+989210734504'},
+                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/new-post.png' ,href:'mailto:n.khorrami8819@gmail.com' ,info:'n.khorrami8819@gmail.com'},
+                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/github.png' ,href:'https://github.com/najme-khorrami' ,info:'najme-khorrami'},
+                    {icon:'https://img.icons8.com/ios-filled/50/bb9bbb/linkedin.png' ,href:'https://www.linkedin.com/in/najme-khorramishad-bb3773277' ,info:'najme-khorramishad'}
                 ]
             }
         },
         methods: {
             submit() {
-
+                alert("mes")
             }
         }
     }
@@ -64,6 +64,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .contact-item a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+    }
+    .contact-item a:hover {
+        text-shadow: 1px 1px 2px #9c9c9c;
     }
     img {
         margin-bottom: 10px;
@@ -100,7 +108,7 @@
         outline: none;
         color: var(--gray-color);
     }
-    input[type="submit"] {
+    #submit {
         width: auto;
         display: inline-block;
         background-color: var(--primary-dark);
@@ -108,7 +116,41 @@
         cursor: pointer;
         transition: .2s;
     }
-    input[type="submit"]:hover {
+    #submit:hover {
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.25);
+    }
+
+    /* media queries */
+
+    @media only screen and (max-width: 992px) {
+        .contact-container {
+            margin: 60px 0 40px 0;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            width: calc(50% - 30px);
+            margin-bottom: 30px;
+            margin: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .contact-item {
+            width: 90%;
+        }
+        .row {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .row input {
+            width: 100%;
+        }
+        input, textarea {
+            width: 100%;
+            font-size: 18px;
+        }
+        #submit {
+            width: fit-content;
+        }
     }
 </style>

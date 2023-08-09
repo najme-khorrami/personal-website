@@ -1,16 +1,16 @@
 <template>
-    <div class="portfolid">
+    <div class="portfolid" id="portfolid">
         <div class="container">
             <h3>نمونه کارها</h3>
             <span>پروژه های من</span>
-                <div class="pro-container" @scroll="show">
-                    <TransitionGroup appear>
-                        <div class="project-item" @mouseover="item.hover = true" @mouseleave="item.hover = false" v-for="item in projectItems" :style="{ backgroundImage: 'url(' + item.img + ')' }" :key="item.title">
-                            <span v-if="item.hover">{{ item.title }}</span>
-                            <a :href="item.url" target="_blank"></a>
-                        </div>
-                    </TransitionGroup>
-                </div>
+            <div class="pro-container">
+                <TransitionGroup appear>
+                    <div class="project-item" @mouseover="item.hover = true" @mouseleave="item.hover = false" v-for="item in projectItems" :style="{ backgroundImage: 'url(' + item.img + ')' }" :key="item.title">
+                        <span v-if="item.hover">{{ item.title }}</span>
+                        <a :href="item.url" target="_blank"></a>
+                    </div>
+                </TransitionGroup>
+            </div>
         </div>
     </div>
 </template>
@@ -41,10 +41,6 @@
     to{rotate: 0deg;}
 }
 
-    .portfolid {
-        height: 100vh;
-        min-height: 700px;
-    }
     h3 {
         text-align: center;
         font-size: 2.5rem;
@@ -62,7 +58,7 @@
         justify-content: space-around;
     }
     .project-item {
-        width: calc(33.33% - 60px);
+        width: calc(33.33% - 40px);
         height: 200px;
         background-repeat: no-repeat;
         background-position: top center;
@@ -103,4 +99,26 @@
         position: absolute;
         z-index: 1;
     }
+
+    /* media queries */    
+    @media only screen and (max-width: 992px) {
+        .container {
+            padding: 30px 10px;
+        }
+        .project-item {
+            width: calc(50% - 60px);
+        }
+    }
+    @media only screen and (max-width: 1200px) {
+        .project-item {
+            width: calc(50% - 40px);
+        }
+    }  
+
+    @media only screen and (max-width: 600px) {
+        .project-item {
+            width: 90%;
+        }
+    }
+
 </style>

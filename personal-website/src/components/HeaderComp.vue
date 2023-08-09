@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header id="home">
         <div class="container">
             <div class="box-parent">
                 <div class="box">
@@ -9,8 +9,8 @@
                         <h5 class="desc">برنامه نویس و توسعه دهنده وب</h5>
                     </div>
                     <div class="btn-box">
-                        <button>رزومه<span class="char">&#8592;</span></button>
-                        <button>مشاهده نمونه کارها<span class="char">&#8592;</span></button>
+                        <a href="./src/assets/resume-new.pdf" download="resume.pdf">رزومه<span class="char">&#8592;</span></a>
+                        <a href="#portfolid">مشاهده نمونه کارها<span class="char">&#8592;</span></a>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
         background-color: rgba(0,0,0,.25);
     }
     .box-parent {
-        margin-top: 18vh;
+        margin-top: 30vh;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -85,10 +85,16 @@
     .my-name {
         font-size: 3rem;
         color: var(--primary-light);
+        text-align: start;
+        white-space: nowrap;
     }
     @keyframes typing {
         from { width: 0; }
 	    to { width: 100% }
+    }
+    @keyframes blink {
+        from{color: transparent;}
+        to{color: #fff;}
     }
     .typing {
         display: flex;
@@ -99,6 +105,7 @@
         content: "|";
         font-size: 2.5rem;
         padding-right: 5px;
+        animation: blink .7s infinite;
     }
     .desc {
         font-size: 2rem;
@@ -110,25 +117,28 @@
     }
     .btn-box {
         margin-top: 30px;
+        display: flex;
+        align-items: center;
     }
-    .btn-box button {
+    .btn-box a {
         font-size: 1.3rem;
         padding: 12px 25px;
         border-radius: 5px;
         border: none;
         background-color: var(--primary-dark);
         box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15);
-        cursor: pointer;
         transition: all .3s ease-in-out .1s;
         font-weight: 900;
         color: #fff;
+        text-decoration: none;
+        white-space: nowrap;
     }
-    .btn-box button:hover {
+    .btn-box a:hover {
         box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.25);
         padding-left: 30px;
     }
 
-    .btn-box button:nth-child(1) {
+    .btn-box a:nth-of-type(1) {
         margin-left: 2vw;
         background-color: #fff;
         color: var(--primary-dark);
@@ -138,7 +148,61 @@
         transition: all .3s ease-in-out .1s;
         display: inline-block;
     }
-    .btn-box button:hover .char {
+    .btn-box a:hover .char {
         transform: translateX(-10px);
+    }
+
+    /* media queries */
+    @media only screen and (max-width: 992px) {
+        .container {
+            padding: 30px 0;
+        }
+        .btn-box {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .btn-box a {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .box-parent {
+            justify-content: center;
+        }
+    }
+
+    @media only screen and (max-width: 777px) {
+        .box {
+            width: 60%;
+        }
+        .hello {
+            font-size: 1rem;
+        }
+        .my-name {
+            font-size: 2.5rem;
+        }
+        .desc {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .box-parent {
+            margin-top: 25vh;
+        }
+        .box {
+            width: 80% !important;
+            padding: 20px;
+        }
+        .my-name {
+            font-size: 2rem;
+            white-space: normal;
+        }
+        .desc {
+            font-size: 1rem;
+        }
+        .btn-box a {
+            font-size: 1rem;
+            padding: 10px 15px;
+        }
     }
 </style>

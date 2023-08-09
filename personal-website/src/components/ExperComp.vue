@@ -1,5 +1,5 @@
 <template>
-    <div class="experience">
+    <div class="experience" id="experience">
         <h3>تجربه</h3>
         <div class="expert-item" v-for="item in expertItems">
             <div class="border"><div class="circle"></div></div>
@@ -27,6 +27,8 @@
     .experience {
         padding: 60px;
         border-radius: 5px;
+        width: 500px;
+        background-color: #fff;
     }
     h3 {
         font-size: 2rem;
@@ -72,4 +74,21 @@
     p {
         font-size: 16px;
     }
+            
+    /* media queries */
+    @media only screen and (max-width: 600px) {
+        .experience {
+            width: 100%;
+            overflow: hidden;
+            padding-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+        .skill-progress {
+            max-width: 90%;
+        }
+
+    } 
 </style>

@@ -8,6 +8,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {  
+  scroll-behavior: smooth;  
+}
 .container {
   padding: 30px 15vw;
   text-align: center;

@@ -1,5 +1,5 @@
 <template>
-    <div class="skill">
+    <div class="skill" id="skill">
         <h3>مهارت ها</h3>
         <div class="skill-item" v-for="item in skillItems" dir="ltr">
             <h6>{{ item.name }}</h6>
@@ -32,13 +32,12 @@
 
 <style scoped>
     .skill {
-        width: 90%;
-        padding: 60px;
+        padding: 50px;
         border-radius: 5px;
+        background-color: #fff;
     }
     h3 {
         font-size: 2rem;
-        padding-bottom: 30px;
         color: var(--primary-dark);
     }
     h6 {
@@ -47,9 +46,9 @@
     }
     .skill-item {
         padding-top: 15px;
-        width: 100%;
     }
     .skill-progress {
+        width: 400px;
         height: 12px;
         border-radius: 5px;
         background-color: rgba(181, 181, 181, 0.6);
@@ -67,4 +66,22 @@
         padding-bottom: 5px;
         color: var(--primary-dark);
     }
+
+        
+    /* media queries */
+    @media only screen and (max-width: 600px) {
+        .skill {
+            width: 100%;
+            overflow: hidden;
+            padding-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+        .skill-progress {
+            max-width: 90%;
+        }
+
+    } 
 </style>
