@@ -46,10 +46,10 @@
       </div>
       <div class="footer-box">
         <div class="box">
-          <a href="#"><img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin-2--v1.png" alt="linkedin-2--v1"/></a>
+          <a href="https://www.linkedin.com/in/najme-khorramishad-bb3773277" target="_blank"><img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin-2--v1.png" alt="linkedin-2--v1"/></a>
         </div>
         <div class="box">
-          <a href=""><img width="20" height="20" src="https://img.icons8.com/fluency-systems-filled/48/ffffff/telegram-app.png" alt="telegram-app"/></a>
+          <a href="https://t.me/njm_kh80" target="_blank"><img width="20" height="20" src="https://img.icons8.com/fluency-systems-filled/48/ffffff/telegram-app.png" alt="telegram-app"/></a>
         </div>
       </div>
     </div>
@@ -235,9 +235,12 @@
     padding: 20px 20px;
     position: relative;
   }
-  .scrolled .nav-container #center .navigation li a:hover {
+  .scrolled .nav-container .navigation li a:hover {
     background-color: var(--primary-light);
     color: #fff;
+  }
+  .scrolled .nav-container #center .navigation li a:hover {
+    background-color: transparent;
   }
   .nav-container {
     padding: 0 15vw;

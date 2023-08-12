@@ -33,13 +33,13 @@
 </script>
 
 <style scoped>
-.v-enter-active {
-    animation: load 1s;
-}
-@keyframes load {
-    from{rotate: 0 1 0 60deg;}
-    to{rotate: 0deg;}
-}
+    .v-enter-active {
+        animation: load 1s;
+    }
+    @keyframes load {
+        from{rotate: 0 1 0 60deg;}
+        to{rotate: 0deg;}
+    }
 
     h3 {
         text-align: center;
